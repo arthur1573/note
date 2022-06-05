@@ -316,12 +316,14 @@
 
 
 
+
 # Fibonacci series:
 # the sum of two elements defines the next
 # a, b = 0, 1
 # while a < 100:
     # print(a)
     # a, b = b, a+b
+
 
 
 
@@ -339,6 +341,7 @@
 
 
 
+
 # users = {'Hans': 'active', 'Éléonore': 'inactive', '景太郎': 'active'}
 # print(users)
 # for user, status in users.copy().items():
@@ -348,13 +351,202 @@
 
 
 
-a = [1, 2, 3, 4, 5]
-b = [i*2 for i in a ]
-print(b)
-c = map(lambda x: x*2, a)
-print(list(c))
 
 
+
+# a = [1, 2, 3, 4, 5]
+# b = [i*2 for i in a ]
+# print(b)
+# c = map(lambda x: x*2, a)
+# print(list(c))
+
+
+
+
+
+
+
+
+# print("This will always be run.")
+
+# def main():
+    # print(
+    # """
+    # This will NOT always be run. 
+    # This module's name = {}
+    # """
+    # .format(__name__))
+    
+    
+ # if __name__ == "__main__":
+    # main()
+# else:
+    # print("this note.py module is run from import.")
+
+
+
+
+
+
+
+# def fullname():
+    # return print('arthur')
+    ## return 'arthur'
+# fullname()
+
+
+
+
+
+
+
+# python object-oriented programming
+
+# class employee:
+    # pass
+    
+# emp_1 = employee()
+# emp_2 = employee()
+
+# print(emp_1)
+# print(emp_2)
+
+
+
+
+
+
+
+
+
+
+# print('↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓')
+# print("This will always be run.")
+
+
+def main():
+    # print(
+    # """
+    
+    # This will NOT always be run. 
+    # This module's name = {}
+    # """
+    # .format(__name__))
+    
+    
+    
+    
+    
+    # # class employee:
+        # # pass
+        
+    # # emp_1 = employee()
+    # # emp_2 = employee()
+
+    # # print(emp_1)
+    # # print(emp_2)
+    
+    # # emp_1.first = 'Corey'
+    # # emp_1.last = 'Schafer'
+    # # emp_1.email = 'Corey.Schafer@company.com'
+    # # emp_1.pay = '50000'
+        
+    # # emp_2.first = 'Test'
+    # # emp_2.last = 'User'
+    # # emp_2.email = 'Test.User@company.com'
+    # # emp_2.pay = '40000'
+    
+    # # print()
+    # # print(emp_1.email)
+    # # print(emp_2.email)
+    
+    raise_amount = 1.05
+    print(raise_amount)
+
+
+    class employee:
+        
+        # class variable
+        raise_amount = 1.04
+        print(raise_amount)
+        # print(raise_amount)
+        
+    
+    
+    
+        def __init__(self, first, last, pay):
+            # first, last, pay are positional arguments
+            self.first = first
+            # self.first: object's atriburion
+            # first: programmer's input
+            # emp_1.first = "corey"
+            # emp_2.first = 'test'
+            # self = employee's object
+            
+            self.last = last
+            self.pay = pay
+            self.email = first + '.' + last + "@company.com"
+            
+        
+        def fullname(self):
+            return '{} {}'.format(self.first, self.last)
+            
+            
+            
+        def apply_raise(self):
+            print(raise_amount)
+            print(employee.raise_amount)
+            print(self.raise_amount)
+            
+            self.pay = int(self.pay * self.raise_amount )
+            return self.pay
+            
+        
+    emp_1 = employee('yatao', 'zhao', 50000)
+    emp_2 = employee('arthur', 'run', 60000)
+    
+    # print()
+    # print(emp_1)
+    # print(emp_1.first, emp_1.last, emp_1.pay)
+    # print(emp_2.first)
+    
+    # print()
+    # print('{} {}'.format(emp_1.first, emp_1.last))    
+    
+    # # fullname()
+    
+    # # print(emp_1.fullname)
+    # # fullname(emp_1)
+    # # emp_1.fullname()
+    # print(emp_1.fullname())  # clear code way
+    # print(emp_2.fullname())
+    # print()
+    
+    
+    # print(employee.fullname(emp_1)) # better understand way
+    # # class.method.arguments
+    
+    # print(emp_1.pay)
+    # emp_1.apply_raise()
+    # print(emp_1.pay)
+    
+    print(emp_1.pay)
+    print(employee.apply_raise(emp_1))
+    
+    print(employee.__name__)
+    
+    
+    
+
+    
+        
+
+
+print(main.__name__)    
+if __name__ == "__main__":
+    main()
+else:
+    print("this note.py module is run from import.")
 
 
 
