@@ -3,6 +3,7 @@
 
 
 
+
 # output = 0
 # print(f"1: {output}")
 
@@ -436,8 +437,7 @@
     # # .format(__name__))
     
     
-    
-    
+        
     
     # # # class employee:
         # # # pass
@@ -538,9 +538,6 @@
     # print(employee.__name__)
     
     
-    
-
-    
         
 
 
@@ -579,6 +576,8 @@
     
     
     
+
+
 
 
 
@@ -656,7 +655,30 @@
 
 
 
-    
+
+
+
+
+
+#######################################
+# n = 10
+# print(str(n) + "! = ", end = '')
+# def factorial(n):
+    # '''
+    # print factorial number in human way
+    # '''
+    # if n < 0:
+        # return 'factorial() not defined for negative values'
+    # if n == 0:
+        # return 1
+    # if n == 1:
+        # print('', n, '= ', end = '')
+        # return 1
+    # else:
+        # print('', n, '*', end = '')
+        # return n * factorial(n - 1)
+
+# print(factorial(n))
 
 
 
@@ -667,10 +689,59 @@
 
 
 
+##############
+# import math
+# print(math.pi)
+# print(math.e)
+# print(math.tau)
 
 
 
 
 
+
+
+
+
+
+################
+# import pandas
+
+# simpsons = pandas.read_html('https://en.wikipedia.org/wiki/List_of_The_Simpsons_episodes_(seasons_1%E2%80%9320)')
+# print(len(simpsons))
+# print(simpsons[1])
+
+
+##############
+# import pandas
+# england = pandas.read_csv('https://www.football-data.co.uk/mmz4281/2122/E0.csv')
+
+# print(england)
+
+
+
+
+
+
+
+
+############
+# # pip install "camelot-py[cv]"
+# import camelot
+
+# table = camelot.read_pdf('foo.pdf', page='1')
+# print(table)
+
+# # table.export('foo.csv', f = 'csv')
+# table.export('foo.csv')
+# # table[0].to_csv('foo.csv')
+
+
+
+
+
+
+
+##############
 
 
