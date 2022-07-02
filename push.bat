@@ -1,5 +1,8 @@
 @echo off
 
+git init
+@echo,
+
 ECHO GIT ADD .
 git add .
 @echo,
