@@ -14,7 +14,6 @@
 # print(f"3: {output}")
 
 
-
 # help_me_get_the_answer()
 # print(f"4: {output}")
 
@@ -64,9 +63,6 @@
     # print("apple")
 
 # help_me_get_a_apple()
-
-
-
 
 
 
@@ -136,7 +132,6 @@
 # print(dict)
  
  
- 
 
 # 4!
 # def factorial(n):
@@ -144,7 +139,6 @@
         # return 1
     # return n * factorial(n-1)
  # print(factorial(4))
-
 
 
 
@@ -588,7 +582,7 @@
 
 
 
-# f(x) = x + 10  ## x belong Z
+# f(x) = x + 10, x belong Z
 # f(1) = 11
 
 
@@ -597,7 +591,6 @@
     # print(y) 
 
 # f(1)
-
 
 
 
@@ -645,9 +638,6 @@
 
 
 
-
-
-
 ######## draw a lot square by turtle
 # import turtle
 
@@ -664,7 +654,6 @@
     # turtle.right(90)
 
 # turtle.done()
-
 
 
 
@@ -703,14 +692,11 @@
 
 
 
-
-
 ##############
 # import math
 # print(math.pi)
 # print(math.e)
 # print(math.tau)
-
 
 
 
@@ -735,13 +721,11 @@
 
 
 
-
 ##############
 # import pandas
 
 # england = pandas.read_csv('https://www.football-data.co.uk/mmz4281/2122/E0.csv')
 # print(england)
-
 
 
 
@@ -790,58 +774,6 @@
 
 
 
-
-
-
-
-###### replace a new line
-# import re
-
-# text = '''
-# i
-# am 
-# a 
-# text 
-# file
-# .
-# end.
-# '''
-# print(text)
-# text = re.sub('\n', "\n// ", text)
-# print(text)
-
-
-
-
-
-
-
-
-
-
-########### replace a new line 2
-# import re
-# import os
-
-# text = open('text.txt', 'r')
-# text2read = text.read()
-# text.close()
-
-# text2 = open('text.txt', 'w')
-# text2write = re.sub('\n','\n// ', text2read)
-# text2.write(text2write)
-# text2.close()
-
-# print('all text have replaced, close text windows will quit.')
-
-# os.system('text.txt')
-
-
-
-
-
-
-#############
 
 
 
