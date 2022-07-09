@@ -841,7 +841,29 @@
 
 
 
-#############
+
+
+
+############# download a youtube video
+# import pytube
+
+# url = input("enter video url: ")
+# path = "D:\pytube"
+
+# pytube.YouTube(url).streams.get_highest_resolution().download(path)
+
+
+
+
+
+
+
+import pytube
+
+url = input("enter video url: ")
+path = "D:\pytube"
+
+pytube.YouTube(url).streams.get_highest_resolution().download(path)
 
 
 
