@@ -794,6 +794,7 @@
 
 
 
+
 ###### replace a new line
 # import re
 
@@ -809,6 +810,7 @@
 # print(text)
 # text = re.sub('\n', "\n// ", text)
 # print(text)
+
 
 
 
@@ -858,12 +860,16 @@
 
 
 
-import pytube
 
-url = input("enter video url: ")
-path = "D:\pytube"
+############# Extract text from PDF
+# import PyPDF2
+# pdf = open('foo.pdf', "rb")
+# reader = PyPDF2.PdfFileReader(pdf)
+# page = reader.getPage(0)
+# print(page.extractText())
 
-pytube.YouTube(url).streams.get_highest_resolution().download(path)
+
+
 
 
 
