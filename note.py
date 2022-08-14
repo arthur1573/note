@@ -873,3 +873,524 @@
 
 
 
+
+
+
+
+###################       http://www.pythonchallenge.com/pc/def/map.html
+# mystr = input('Paste your code: \n')
+# print('')
+# mappingtbl = mystr.maketrans('ghijklmnopqrstuvwxyzabcdef','ijklmnopqrstuvwxyzabcdefgh')
+# print('Mapping table: \n', mappingtbl)
+# print('')
+# newstr = mystr.translate(mappingtbl)
+# print('Translation: \n', newstr)
+
+
+
+
+
+
+
+
+
+
+#########################    30 days of python
+
+# print(
+# '''
+# 1 1 1 1 1
+# 2 1 2 4 8
+# 3 1 3 9 27
+# 4 1 4 16 64
+# 5 1 5 25 125
+# ''')
+
+
+
+
+# print('I hope everyone is enjoying the Python Challenge.\nAre you ?') # line break
+# print('Days\tTopics\tExercises') # adding tab space or 4 spaces 
+# print('Day 1\t3\t5')
+# print('Day 2\t3\t5')
+# print('Day 3\t3\t5')
+# print('Day 4\t3\t5')
+# print('This is a backslash  symbol (\\)') # To write a backslash
+# print('In every programming language it starts with \"Hello, World!\"') # to write a double quote inside a single quote
+
+
+
+
+
+
+# # Strings only
+# first_name = 'Asabeneh'
+# last_name = 'Yetayeh'
+# language = 'Python'
+# formated_string = 'I am %s %s. I teach %s' %(first_name, last_name, language)
+# print(formated_string)
+
+# # Strings  and numbers
+# radius = 10
+# pi = 3.14
+# area = pi * radius ** 2
+# formated_string = 'The area of circle with a radius %d is %.2f.' %(radius, area) # 2 refers the 2 significant digits after the point
+
+# python_libraries = ['Django', 'Flask', 'NumPy', 'Matplotlib','Pandas']
+# formated_string = 'The following are python libraries:%s' % (python_libraries)
+# print(formated_string) # "The following are python libraries:['Django', 'Flask', 'NumPy', 'Matplotlib','Pandas']"
+
+
+
+
+
+
+
+# language = 'Python'
+# a,b,c,d,e,f = language # unpacking sequence characters into variables
+# print(a) # P
+# print(b) # y
+# print(c) # t
+# print(d) # h
+# print(e) # o
+# print(f) # n
+
+
+
+
+
+
+############ Count Character Occurrences using Python
+# def count_characters(s):
+    # count = {}
+    # for i in s:
+        # if i in count:
+            # count[i] += 1
+        # else:
+            # count[i] = 1
+    # print(count)
+
+# word = input('Enter your strings: ')
+# count_characters(word)
+
+
+
+
+
+
+###################   leetcode 9
+# x = 12345
+# print(type(x))
+
+# nx = str(x)
+# print(type(nx))
+
+# print(nx)
+# print(-len(nx))
+
+# print(nx[::-1])
+
+
+
+
+
+
+
+
+##################  30 days of python
+# challenge = 'thirty\t days\t of\t python'
+# print(challenge)
+# print(challenge.expandtabs())   # 'thirty  days    of      python'
+# print(challenge.expandtabs(10)) # 'thirty    days      of        python'
+
+
+
+
+
+
+# challenge = 'thirty days of python'
+# print(challenge.find('y'))  # 5
+# print(challenge.find('th')) # 1
+
+
+
+# challenge = 'thirty days of python'
+# print(challenge.rfind('y'))  # 16
+# print(challenge.rfind('th')) # 17
+
+
+
+
+
+
+
+
+
+# challenge = 'thirty days of python'
+# print(challenge.swapcase())   # THIRTY DAYS OF PYTHON
+# challenge = 'Thirty Days Of Python'
+# print(challenge.swapcase())  # tHIRTY dAYS oF pYTHON
+
+
+
+
+# strings = ['Thirty', 'Days', 'Of', 'Python']
+# new_str = ' '.join(strings)
+# print(new_str)
+
+
+
+# company = "Coding For All"
+# print(company)
+
+# print(len(company))
+
+# new_company = company.upper()
+# print(new_company)
+
+# new_new_company = company.lower()
+# print(new_new_company)
+
+
+# print(company.capitalize())
+# print(company.title())
+# print(company.swapcase())
+
+# #9
+# print(company[0:7])
+
+
+
+# #10
+# print(company.index('Coding'))
+
+
+
+# #11
+# #print(company.replace('Coding','Python'))
+# company = company.replace('Coding','Python')
+# print(company)
+
+
+
+
+
+# #12
+# company = company.replace('All','Everyone')
+# print(company)
+
+
+# company = 'Coding For All'
+# print(company.split())
+
+
+# company = "Facebook, Google, Microsoft, Apple, IBM, Oracle, Amazon"
+# print(company.split(','))
+
+
+
+
+# #15
+# company = 'Coding For All'
+# print(company[0])
+# print(company[-1])
+
+
+
+
+
+# for number in range(6):
+    # if number == 3:
+        # pass
+    # print(number)
+
+
+
+
+
+# import string
+# print(string.ascii_letters) # abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
+# print(string.digits)        # 0123456789
+# print(string.punctuation)   # !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~
+
+
+
+
+
+
+
+
+
+################
+# numbers = [-8, -7, -3, -1, 0, 1, 3, 4, 5, 7, 6, 8, 10]
+# positive_even_numbers = [ i for i in numbers if i % 2 == 0 and i > 0]
+# print(positive_even_numbers)
+
+
+
+
+
+
+
+
+
+
+
+############ Execution Time
+# from time import time
+# start = time()
+
+# # code start
+# email = input('Enter your Email: ')
+# email = email.strip()
+# slicer_index = email.index('@')
+# username = email[:slicer_index]
+# domain_name = email[slicer_index+1:]
+# print('Your user name is: ', username, ' and your domain is: ', domain_name)
+# # code end
+
+# # clcoding.com
+# end = time()
+# execution_time = end - start
+# print('Execution Time(s): ', execution_time)
+
+
+
+
+
+
+########################## Roman to Integer in Python
+
+
+# class Solution(object):
+   # def romanToInt(self, s):
+      # """
+      # :type s: str
+      # :rtype: int
+      # """
+      # roman = {'I':1,'V':5,'X':10,'L':50,'C':100,'D':500,'M':1000,'IV':4,'IX':9,'XL':40,'XC':90,'CD':400,'CM':900}
+      # i = 0
+      # num = 0
+      # while i < len(s):
+         # if i+1<len(s) and s[i:i+2] in roman:
+            # num+=roman[s[i:i+2]]
+            # i+=2
+         # else:
+            # num+=roman[s[i]]
+            # i+=1
+      # return num
+      
+      
+# ob1 = Solution()
+# print(ob1.romanToInt("III"))
+# print(ob1.romanToInt("CDXLIII"))
+
+
+
+
+
+
+        # 105 ms
+        # roman = {'I':1, 'V':5, 'X':10, 'L':50, 'C':100, 'D':500, 'M':1000, 'IV':4, 'IX':9, 'XL':40, 'XC':90, 'CD':400, 'CM':900}
+        # slicer_s = 0
+        # number = 0
+
+        # while slicer_s < len(s):
+            # if slicer_s + 1 < len(s) and s[slicer_s:slicer_s+2] in roman:
+                # number += roman[s[slicer_s:slicer_s+2]]
+                # slicer_s += 2
+            # else:
+                # number += roman[s[slicer_s]]
+                # slicer_s += 1      
+        # return number
+
+
+
+
+
+
+        # # 65 ms
+        # roman = {'I':1, 'V':5, 'X':10, 'L':50, 'C':100, 'D':500, 'M':1000, 'IV':4, 'IX':9, 'XL':40, 'XC':90, 'CD':400, 'CM':900}
+        # number = 0
+        # for i in range(len(s)):
+            # # checking the string is the out of the dictionary 
+            # if i == len(s):
+                # break
+            # # checking the string is the last one of the dictionary 
+            # if i == len(s) -1:
+                # number += roman[s[i]]
+                # break
+            # if roman[s[i]] >= roman[s[i + 1]]:
+                # number += roman[s[i]]
+            # else:
+                # number -= roman[s[i]]
+        # return number
+
+
+
+
+
+
+
+
+
+
+# import numpy
+
+# print(numpy.zeros((3,3)))
+# print()
+# print(numpy.identity(5))
+
+
+
+
+
+
+# import matplotlib.pyplot as plt
+
+# x = range(10)
+
+# y = range(10)
+# plt.plot(x, y)
+# plt.show()
+
+
+
+
+
+
+
+
+############### sum of array
+
+# from time import time
+# start = time()
+
+# # code start
+# email = input('Enter your Email: ')
+# email = email.strip()
+# slicer_index = email.index('@')
+# username = email[:slicer_index]
+# domain_name = email[slicer_index+1:]
+# print('Your user name is: ', username, ' and your domain is: ', domain_name)
+# # code end
+
+# # clcoding.com
+# end = time()
+# execution_time = end - start
+# print('Execution Time(s): ', execution_time)
+
+
+
+
+
+
+
+
+
+
+##########################
+# from time import time
+
+# def run_time_decorator(function):
+    # def wrapper():
+        # start = time()
+        
+        # result = function()
+        
+        # end = time()
+        # execution_time = end - start
+        # print('Execution Time(s): ', execution_time)
+        # return result
+    # return wrapper
+    
+
+# s = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+# s1 = range(1,101)
+# s2 = range(11, 21)
+# s3 = range(21, 31)
+
+
+# @run_time_decorator
+# def find_sum():
+    # s1 = range(1,10001)
+    # total = 0
+    
+    # for i in s1:
+        # total = total + i 
+    # print(total)
+    # return total
+
+
+# # for i in s2:
+    # # print(i)
+
+# find_sum()
+
+
+
+
+
+
+
+
+
+
+
+##########  leetcode:14. Longest Common Prefix
+
+# strs = ["flower","flow","flight"]
+
+# # list to dictionary
+# # dict_strs = {strs[i]: 0 for i in range(len(strs))} 
+
+# common = {}
+# for x in range_strs:
+    # if length_strs == x + 1:
+        # break
+            
+    # if strs[x][x] == strs[x+1][x]:
+        
+        
+        # common[strs[x]] = common[strs[x]] + 1
+    
+
+# print(common)
+
+
+
+
+
+###################################
+# import numpy as np
+# import matplotlib.pyplot as plt
+# import matplotlib.collections as collections
+
+
+# t = np.arange(0.0, 2, 0.01)
+# s1 = np.sin(2*np.pi*t)
+# s2 = 1.2*np.sin(4*np.pi*t)
+
+# #subplots?
+# fig, ax = plt.subplots()
+# ax.set_title('using span_where')
+# ax.plot(t, s2, color='black')
+# ax.axhline(0, color='blue', lw=2)
+
+# collection = collections.BrokenBarHCollection.span_where(
+    # t, ymin=0, ymax=1.2, where=s2 > 0, facecolor='green', alpha=0.5)
+# ax.add_collection(collection)
+
+# collection = collections.BrokenBarHCollection.span_where(
+    # t, ymin=-1.2, ymax=0, where=s2 < 0, facecolor='red', alpha=0.5)
+# ax.add_collection(collection)
+
+# plt.legend()
+# plt.show()
+
+
+
+
+
+
+
