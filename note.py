@@ -1716,7 +1716,7 @@
 
 
 
-
+#################################### append()
 # class Node:
     # def __init__(self, value):
         # self.value = value
@@ -1796,6 +1796,199 @@
 
 # print('''\n# to remove the last Node, and get it's value''')
 # print(my_linked_list.pop().value)
+
+
+
+
+
+
+
+
+
+############################################ prepend()
+# class Node:
+    # def __init__(self, value):
+        # self.value = value
+        # self.next = None
+
+
+# class LinkedList:
+    # def __init__(self, value):
+        # new_node = Node(value)
+        # self.head = new_node
+        # self.tail = new_node
+        # self.length = 1
+
+
+    # def print_list(self):
+        # temp = self.head
+        # while temp is not None:
+            # print(temp.value)
+            # temp = temp.next
+
+    
+    # def append(self, value):
+        # new_node = Node(value)
+        # if self.head is None:
+        # # if self.length == 0:
+            # self.head = new_node
+            # self.tail = new_node
+        # else: 
+            # self.tail.next = new_node
+            # self.tail = new_node
+        # self.length += 1
+
+
+    # def prepend(self, value):
+        # new_node = Node(value)
+        # if self.length == 0:
+            # self.head = new_node
+            # self.tail = new_node
+        # else:
+            # # added a new Node to the list beginning
+            # new_node.next = self.head
+
+            # # to move head to the first Node
+            # self.head = new_node
+
+        # self.length += 1
+        # return True
+
+
+
+# my_linked_list = LinkedList(2)
+# my_linked_list.append(3)
+# print('''\n# to print the linkedlist right now''')
+# my_linked_list.print_list()
+# # output: 2, 3
+
+# my_linked_list.prepend(1)
+# print('''\n# to print the linkedlist right now''')
+# my_linked_list.print_list()
+# # output: 1, 2, 3
+
+
+
+
+
+
+
+
+
+
+
+
+############################################ pop_first()
+# class Node:
+    # def __init__(self, value):
+        # self.value = value
+        # self.next = None
+
+
+# class LinkedList:
+    # def __init__(self, value):
+        # new_node = Node(value)
+        # self.head = new_node
+        # self.tail = new_node
+        # self.length = 1
+
+
+    # def print_list(self):     
+        # temp = self.head
+        # while temp is not None:
+            # print(temp.value)
+            # temp = temp.next
+        # else:
+        # # "else:" equal to "if temp is None:" or "if temp == None:"
+            # print(temp)
+            
+        
+
+    
+    # def append(self, value):
+        # new_node = Node(value)
+        # if self.head is None:
+        # # if self.length == 0:
+            # self.head = new_node
+            # self.tail = new_node
+        # else: 
+            # self.tail.next = new_node
+            # self.tail = new_node
+        # self.length += 1
+
+    # def pop_first(self):
+        # if self.length == 0:
+            # return None
+
+        # temp = self.head
+        # self.head = self.head.next
+        # temp.next = None
+        # self.length -= 1
+         
+        # # if the linkedlist only have one Node
+        # # after call pop_first(), the length of linkedlist is zero
+        # # to set tail equal to None
+        # if self.length == 0:
+            # self.tail = None
+
+        # return temp
+
+
+
+
+
+# my_linked_list = LinkedList(1)
+# my_linked_list.append(2)
+# my_linked_list.append(3)
+
+
+# print('''\n# 1. to print the linkedlist right now''')
+# my_linked_list.print_list()
+# # output: 1, 2, 3, None
+# print()
+# print()
+
+
+# print('''\n# 2. to remove the first Node, do not care else''')
+# my_linked_list.pop_first()
+# # output: 
+# print()
+# print()
+
+
+# print('''\n# 3. to print the linkedlist right now''')
+# my_linked_list.print_list()
+# # output: 2, 3, None
+# print()
+# print()
+
+
+# print('''\n# 4. to remove the first Node, print it's object''')
+# print(my_linked_list.pop_first())
+# # output: <__main__.Node object at 0x00000260D2E03DF0>
+# print()
+# print()
+
+
+# print('''\n# 5. to print the linkedlist right now''')
+# my_linked_list.print_list()
+# # output: 3, None
+# print()
+# print()
+
+
+# print('''\n# 6. to remove the first Node, and get it's value''')
+# print(my_linked_list.pop_first().value)
+# # output: 3
+# print()
+# print()
+
+
+# print('''\n# 7. to print the linkedlist right now''')
+# my_linked_list.print_list()
+# # output: None
+
+
 
 
 
