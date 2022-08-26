@@ -1618,43 +1618,188 @@
 
 
 
-class Node:
-    def __init__(self, value):
-        self.value = value
-        self.next = None
+
+# class Node:
+    # def __init__(self, value):
+        # self.value = value
+        # self.next = None
 
 
-class LinkedList:
-    def __init__(self, value):
-        new_node = Node(value)
-        self.head = new_node
-        self.tail = new_node
-        self.length = 1
+# class LinkedList:
+    # def __init__(self, value):
+        # new_node = Node(value)
+        # self.head = new_node
+        # self.tail = new_node
+        # self.length = 1
 
 
-    def print_list(self):
-        temp = self.head
-        while temp is not None:
-            print(temp.value)
-            temp = temp.next
+    # def print_list(self):
+        # temp = self.head
+        # while temp is not None:
+            # print(temp.value)
+            # temp = temp.next
     
     
-    def append(self, value):
-        new_node = Node(value)
-        if self.head is None:
+    # def append(self, value):
+        # new_node = Node(value)
+        # if self.head is None:
         # if self.length == 0:
-            self.head = new_node
-            self.tail = new_node
-        else:
-            self.tail.next = new_node
-            self.tail = new_node
-        self.length += 1
+            # self.head = new_node
+            # self.tail = new_node
+        # else:
+            # self.tail.next = new_node
+            # self.tail = new_node
+        # self.length += 1
 
-my_linked_list = LinkedList(1)    
+# my_linked_list = LinkedList(1)    
 
-my_linked_list.append(2)
+# my_linked_list.append(2)
 
-my_linked_list.print_list()
+# my_linked_list.print_list()
+
+
+
+
+
+
+
+###########################  desktop notification
+# import time
+# from plyer import notification
+
+# if __name__ == '__main__':
+    # while True:
+        # notification.notify(
+            # title = 'ALERT!!!',
+            # message = "Take a break! It has been 15minutes!",
+            # timeout = 10
+        # )
+        # time.sleep(900)
+
+
+
+
+
+
+
+
+##################### leetcode14
+# strings = ["dog","racecar","car","cat","a","ab","racecaraaaaa","racecara","racecaraa"]
+
+# # strings = ["flower","flow","flight"]
+# # strings = ["dog","racecar","car"]
+# print()
+# print(max(strings))
+# print(min(strings))
+# print()
+# print(ord("a"))
+# print(ord("b"))
+# print(ord("c"))
+# print()
+# print(ord("0"))
+# print(ord("1"))
+# print()
+# print("a" > "ab")
+# print("ab" > "aba")
+
+# print([0] > [1])
+# print(['0'] > ['1'])
+
+
+
+
+
+
+
+
+
+
+
+
+
+# class Node:
+    # def __init__(self, value):
+        # self.value = value
+        # self.next = None
+
+
+# class LinkedList:
+    # def __init__(self, value):
+        # new_node = Node(value)
+        # self.head = new_node
+        # self.tail = new_node
+        # self.length = 1
+
+
+    # def print_list(self):
+        # temp = self.head
+        # while temp is not None:
+            # print(temp.value)
+            # temp = temp.next
+
+    
+    # def append(self, value):
+        # new_node = Node(value)
+        # if self.head is None:
+        # # if self.length == 0:
+            # self.head = new_node
+            # self.tail = new_node
+        # else: 
+            # self.tail.next = new_node
+            # self.tail = new_node
+        # self.length += 1
+
+
+
+
+    # def pop(self):
+
+        # if self.length == 0:
+        # # if self.head is None:
+            # return None  
+        # temp = self.head
+        # pre = self.head
+        
+        # # or, while(temp.next is not None)
+        # while(temp.next):
+            # pre = temp
+            # temp = temp.next
+        # self.tail = pre
+        # self.tail.next = None
+
+        # self.length -= 1
+        # # self.length = length - 1
+
+        # # remove the last Node
+        # if self.length == 0:
+            # self.head = None
+            # self.tail = None
+
+        # # get the Node we removed 
+        # return temp
+
+# my_linked_list = LinkedList(1)
+# my_linked_list.append(2)
+# my_linked_list.append(3)
+# my_linked_list.append(4)
+
+
+
+# print('''\n# to remove the last Node, do not care else''')
+# my_linked_list.pop()
+
+# print('''\n# to print the linkedlist right now''')
+# my_linked_list.print_list()
+
+# print('''\n# to remove the last Node, print it's object''')
+# print(my_linked_list.pop())
+
+# print('''\n# to remove the last Node, and get it's value''')
+# print(my_linked_list.pop().value)
+
+
+
+
 
 
 
