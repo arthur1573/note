@@ -36,21 +36,6 @@ http://www.pythonchallenge.com/pc/def/274877906944.html
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 Number 1 challenge:
 http://www.pythonchallenge.com/pc/def/map.html
 
