@@ -77,25 +77,15 @@
 
 # logo = '''
 
-# _____.___.              ___________               __________.__                   
-# \__  |   |____          \__    ___/____    ____   \____    /|  |__ _____    ____  
- # /   |   \__  \    ______ |    |  \__  \  /  _ \    /     / |  |  \\__  \  /  _ \ 
- # \____   |/ __ \_ /_____/ |    |   / __ \(  <_> )  /     /_ |   Y  \/ __ \(  <_> )
- # / ______(____  /         |____|  (____  /\____/  /_______ \|___|  (____  /\____/ 
- # \/           \/                       \/                 \/     \/     \/        
+# _____.___.              ___________               
+# \__  |   |____          \__    ___/____    ____   
+ # /   |   \__  \    ______ |    |  \__  \  /  _ \  
+ # \____   |/ __ \_ /_____/ |    |   / __ \(  <_> ) 
+ # / ______(____  /         |____|  (____  /\____/  
+ # \/           \/                       \/         
 # '''
 
 
-
-# logo2 = '''
- # __     __       _______            _______                 
- # \ \   / /      |__   __|          |___  / |                
-  # \ \_/ /_ _ ______| | __ _  ___      / /| |__   __ _  ___  
-   # \   / _` |______| |/ _` |/ _ \    / / | '_ \ / _` |/ _ \ 
-    # | | (_| |      | | (_| | (_) |  / /__| | | | (_| | (_) |
-    # |_|\__,_|      |_|\__,_|\___/  /_____|_| |_|\__,_|\___/ 
-# '''
- 
  
  
 # print(logo)
@@ -2267,6 +2257,304 @@
 
 
 
+
+
+
+
+
+
+############################### remove()
+
+
+# class Node:
+    # def __init__(self, value):
+        # self.value = value
+        # self.next = None
+
+
+
+
+# class LinkedList:
+    # def __init__(self, value):
+        # new_node = Node(value)
+        # self.head = new_node
+        # self.tail = new_node
+        # self.length = 1
+
+
+
+
+    # def print_list(self):     
+        # temp = self.head
+        # while temp is not None:
+            # print(temp.value)
+            # temp = temp.next
+        # else:
+            # print(temp)
+            
+
+
+
+    # def append(self, value):
+        # new_node = Node(value)
+        # if self.head is None:
+        # # if self.length == 0:
+            # self.head = new_node
+            # self.tail = new_node
+        # else: 
+            # self.tail.next = new_node
+            # self.tail = new_node
+        # self.length += 1
+        
+        
+        
+        
+        
+        
+    # def pop_first(self):
+        # if self.length == 0:
+            # return None
+        # temp = self.head
+        # self.head = self.head.next
+        # temp.next = None
+        # self.length -= 1
+        # if self.length == 0:
+            # self.tail = None
+        # return temp
+
+
+
+
+
+
+
+
+    # def pop(self):
+        # if self.length == 0:
+            # return None  
+        # temp = self.head
+        # pre = self.head        
+        # while(temp.next):
+            # pre = temp
+            # temp = temp.next
+        # self.tail = pre
+        # self.tail.next = None
+        # self.length -= 1
+        # if self.length == 0:
+            # self.head = None
+            # self.tail = None
+        # return temp
+
+        
+
+
+
+
+
+
+    # def get(self, index):
+        # if index < 0 or index >= self.length:
+            # return None
+        # temp = self.head
+        # for _ in range(index):
+            # temp = temp.next
+        # return temp
+
+
+
+
+
+
+        
+        
+        
+    # def remove(self, index):
+        # if index < 0 or index >= self.length:
+            # return None
+            # # if this remove() methon is success, it will return a Node,
+            # # if not, it will return None
+            # # it is up to success return
+
+        # if index == 0:
+            # return self.pop_first()
+        # if index == self.length - 1:
+            # return self.pop()
+        # prev = self.get(index - 1)
+        # temp = prev.next
+        # # do not use "temp = temp.get(index)", because it's compelity is O(n)
+        
+        # prev.next = temp.next
+        # temp.next = None
+        # self.length -= 1
+        # return temp
+        
+        
+# my_linked_list = LinkedList(11) 
+# my_linked_list.append(3)
+# my_linked_list.append(23)
+# my_linked_list.append(7)
+# my_linked_list.print_list()
+# print()
+
+
+
+# my_linked_list.remove(2)
+# print('''\n# to print the linkedlist right now''')
+# my_linked_list.print_list()
+
+
+
+
+
+
+
+
+
+
+################################ reverse()
+# class Node:
+    # def __init__(self, value):
+        # self.value = value
+        # self.next = None
+
+
+
+
+# class LinkedList:
+    # def __init__(self, value):
+        # new_node = Node(value)
+        # self.head = new_node
+        # self.tail = new_node
+        # self.length = 1
+
+
+
+
+    # def print_list(self):     
+        # temp = self.head
+        # while temp is not None:
+            # print(temp.value)
+            # temp = temp.next
+        # else:
+            # print(temp)
+            
+
+
+
+    # def append(self, value):
+        # new_node = Node(value)
+        # if self.head is None:
+        # # if self.length == 0:
+            # self.head = new_node
+            # self.tail = new_node
+        # else: 
+            # self.tail.next = new_node
+            # self.tail = new_node
+        # self.length += 1
+        
+
+
+    # def reverse(self):
+        # temp = self.head
+        # self.head = self.tail
+        # self.tail = temp
+        # after = temp.next
+        # before = None
+        # for _ in range(self.length):
+            # after = temp.next
+            # temp.next = before
+            # before = temp
+            # temp = after
+
+
+
+# my_linked_list = LinkedList(1)
+# my_linked_list.append(2)
+# my_linked_list.append(3)
+# my_linked_list.append(4)
+# my_linked_list.print_list()
+# print()
+
+# my_linked_list.reverse()
+# my_linked_list.print_list()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+############################### Double linked list
+
+
+
+# class Node:
+    # def __init__(self, value):
+    # # def __init__(self, *args):
+    
+        # self.value = value
+        # # self.value = args
+        
+        # self.next = None
+        # self.prev = None
+
+
+
+
+
+
+# class DoubleLinkedList:
+    # def __init__(self, value):
+    # # def __init__(self, *args):
+    
+        # new_node = Node(value)
+        # # new_node = Node(*args)
+        
+        
+        # self.head = new_node
+        # self.tail = new_node        
+        # self.length = 1
+
+
+        
+        
+    # def print_list(self):
+        # # print(self.head.prev)
+
+        # temp = self.head
+        # while temp is not None:
+            # print(temp.value)
+            # temp = temp.next
+            
+        # # else:
+            # # print(temp)
+
+
+
+
+# # my_double_linked_list = DoubleLinkedList()
+# # my_double_linked_list = DoubleLinkedList(7,1,3)
+# my_double_linked_list = DoubleLinkedList(7)
+# my_double_linked_list.print_list()
+
+
+
+
+
+
+
+
+###################################### append()
+
+
+https://www.bilibili.com/video/BV1US4y1a72f?p=33&spm_id_from=pageDriver&vd_source=8bf0a0de95fe65eac2a0f4be515e4036
 
 
 
