@@ -1607,7 +1607,7 @@
 
 
 
-
+######################################## append()
 
 # class Node:
     # def __init__(self, value):
@@ -1706,7 +1706,9 @@
 
 
 
-#################################### append()
+################################### pop()
+
+
 # class Node:
     # def __init__(self, value):
         # self.value = value
@@ -1744,17 +1746,21 @@
 
     # def pop(self):
 
-        # if self.length == 0:
         # # if self.head is None:
+        # if self.length == 0:
+        
+        
             # return None  
         # temp = self.head
-        # pre = self.head
+        # prev = self.head
         
-        # # or, while(temp.next is not None)
+        
         # while(temp.next):
-            # pre = temp
+        # # or, while(temp.next is not None)
+        
+            # prev = temp
             # temp = temp.next
-        # self.tail = pre
+        # self.tail = prev
         # self.tail.next = None
 
         # self.length -= 1
@@ -1767,6 +1773,7 @@
 
         # # get the Node we removed 
         # return temp
+
 
 # my_linked_list = LinkedList(1)
 # my_linked_list.append(2)
@@ -1787,6 +1794,8 @@
 # print('''\n# to remove the last Node, and get it's value''')
 # print(my_linked_list.pop().value)
 
+# print('''\n# to print the linkedlist right now''')
+# my_linked_list.print_list()
 
 
 
@@ -2263,64 +2272,67 @@
 
 
 
+
 ############################### remove()
 
-
-# class Node:
-    # def __init__(self, value):
-        # self.value = value
-        # self.next = None
-
-
-
-
-# class LinkedList:
-    # def __init__(self, value):
-        # new_node = Node(value)
-        # self.head = new_node
-        # self.tail = new_node
-        # self.length = 1
+'''
+'''
+'''
+class Node:
+    def __init__(self, value):
+        self.value = value
+        self.next = None
 
 
 
 
-    # def print_list(self):     
-        # temp = self.head
-        # while temp is not None:
-            # print(temp.value)
-            # temp = temp.next
-        # else:
-            # print(temp)
+class LinkedList:
+    def __init__(self, value):
+        new_node = Node(value)
+        self.head = new_node
+        self.tail = new_node
+        self.length = 1
+
+
+
+
+    def print_list(self):     
+        temp = self.head
+        while temp is not None:
+            print(temp.value)
+            temp = temp.next
+        else:
+            print(temp)
             
 
 
 
-    # def append(self, value):
-        # new_node = Node(value)
-        # if self.head is None:
-        # # if self.length == 0:
-            # self.head = new_node
-            # self.tail = new_node
-        # else: 
-            # self.tail.next = new_node
-            # self.tail = new_node
-        # self.length += 1
-        
-        
-        
-        
-        
-        
-    # def pop_first(self):
+    def append(self, value):
+        new_node = Node(value)
+        if self.head is None:
         # if self.length == 0:
-            # return None
-        # temp = self.head
-        # self.head = self.head.next
-        # temp.next = None
-        # self.length -= 1
-        # if self.length == 0:
-            # self.tail = None
-        # return temp
+            self.head = new_node
+            self.tail = new_node
+        else: 
+            self.tail.next = new_node
+            self.tail = new_node
+        self.length += 1
+        
+        
+        
+        
+        
+        
+    def pop_first(self):
+        if self.length == 0:
+            return None
+        temp = self.head
+        self.head = self.head.next
+        temp.next = None
+        self.length -= 1
+        if self.length == 0:
+            self.tail = None
+        return temp
 
 
 
@@ -2329,21 +2341,21 @@
 
 
 
-    # def pop(self):
-        # if self.length == 0:
-            # return None  
-        # temp = self.head
-        # pre = self.head        
-        # while(temp.next):
-            # pre = temp
-            # temp = temp.next
-        # self.tail = pre
-        # self.tail.next = None
-        # self.length -= 1
-        # if self.length == 0:
-            # self.head = None
-            # self.tail = None
-        # return temp
+    def pop(self):
+        if self.length == 0:
+            return None  
+        temp = self.head
+        pre = self.head        
+        while(temp.next):
+            pre = temp
+            temp = temp.next
+        self.tail = pre
+        self.tail.next = None
+        self.length -= 1
+        if self.length == 0:
+            self.head = None
+            self.tail = None
+        return temp
 
         
 
@@ -2352,13 +2364,13 @@
 
 
 
-    # def get(self, index):
-        # if index < 0 or index >= self.length:
-            # return None
-        # temp = self.head
-        # for _ in range(index):
-            # temp = temp.next
-        # return temp
+    def get(self, index):
+        if index < 0 or index >= self.length:
+            return None
+        temp = self.head
+        for _ in range(index):
+            temp = temp.next
+        return temp
 
 
 
@@ -2368,43 +2380,44 @@
         
         
         
-    # def remove(self, index):
-        # if index < 0 or index >= self.length:
-            # return None
-            # # if this remove() methon is success, it will return a Node,
-            # # if not, it will return None
-            # # it is up to success return
+    def remove(self, index):
+        if index < 0 or index >= self.length:
+            return None
+            # if this remove() methon is success, it will return a Node,
+            # if not, it will return None
+            # it is up to success return
 
-        # if index == 0:
-            # return self.pop_first()
-        # if index == self.length - 1:
-            # return self.pop()
-        # prev = self.get(index - 1)
-        # temp = prev.next
-        # # do not use "temp = temp.get(index)", because it's compelity is O(n)
+        if index == 0:
+            return self.pop_first()
+        if index == self.length - 1:
+            return self.pop()
+        prev = self.get(index - 1)
+        temp = prev.next
+        # do not use "temp = temp.get(index)", because it's complexity is O(n)
         
-        # prev.next = temp.next
-        # temp.next = None
-        # self.length -= 1
-        # return temp
+        prev.next = temp.next
+        temp.next = None
+        self.length -= 1
+        return temp
         
         
-# my_linked_list = LinkedList(11) 
-# my_linked_list.append(3)
-# my_linked_list.append(23)
-# my_linked_list.append(7)
-# my_linked_list.print_list()
-# print()
+my_linked_list = LinkedList(11) 
+my_linked_list.append(3)
+my_linked_list.append(23)
+my_linked_list.append(7)
+my_linked_list.print_list()
+print()
 
 
 
-# my_linked_list.remove(2)
-# print('''\n# to print the linkedlist right now''')
-# my_linked_list.print_list()
+my_linked_list.remove(2)
 
 
 
 
+
+print('\n# to print the linkedlist right now')
+my_linked_list.print_list()
 
 
 
@@ -2491,6 +2504,8 @@
 
 
 
+
+
 ############################### Double linked list
 
 
@@ -2551,10 +2566,1060 @@
 
 
 
-###################################### append()
 
 
-https://www.bilibili.com/video/BV1US4y1a72f?p=33&spm_id_from=pageDriver&vd_source=8bf0a0de95fe65eac2a0f4be515e4036
+###################################### Double linked list number 2
+
+
+# class Node:
+    # def __init__(self):
+    # # def __init__(self, value):
+    # # def __init__(self, *args):
+    
+        # self.value = None
+        # # self.value = value
+        # # self.value = args
+        
+        # self.next = None
+        # self.prev = None
+
+
+
+
+
+
+# class DoubleLinkedList:
+
+    # def __init__(self):
+    # # def __init__(self, value):
+    # # def __init__(self, *args):
+    
+        # new_node = Node()
+        # # new_node = Node(value)
+        # # new_node = Node(*args)
+        
+        
+        # self.head = new_node
+        # self.tail = new_node        
+        # self.length = 1
+
+
+        
+        
+    # def print_list(self):
+        # # print(self.head.prev)
+
+        # temp = self.head
+        # while temp is not None:
+            # print(temp.value)
+            # temp = temp.next
+            
+        # # else:
+            # # print(temp)
+
+
+
+# my_double_linked_list = DoubleLinkedList()
+# print(type(my_double_linked_list))
+# my_double_linked_list.print_list()
+
+
+
+
+
+
+
+
+
+
+
+
+
+###################################### DoubleLinkedList.append()
+
+
+
+# class Node:
+    # def __init__(self, value):
+        # self.value = value        
+        # self.next = None
+        # self.prev = None
+
+
+
+
+
+# class DoubleLinkedList:
+    # def __init__(self, value):    
+        # new_node = Node(value)  
+        # self.head = new_node
+        # self.tail = new_node        
+        # self.length = 1
+
+
+        
+        
+        
+    # def print_list(self):
+        # temp = self.head
+        # while temp is not None:
+            # print(temp.value)
+            # temp = temp.next
+            
+
+
+    # def append(self, value):
+        # new_node = Node(value)
+        # if self.head is None:
+            # self.head = new_node
+            # self.tail = new_node
+        # else:
+            # self.tail.next = new_node
+            # new_node.prev = self.tail
+            # self.tail = new_node
+        # self.length += 1
+        # return True
+
+
+
+
+
+
+
+# my_double_linked_list = DoubleLinkedList(1)
+# my_double_linked_list.append(2)
+# my_double_linked_list.print_list()
+
+
+
+
+
+
+
+
+
+
+
+################################### DoubleLinkedList
+
+
+'''
+'''
+class Node:
+    def __init__(self, value):
+        self.value = value
+        self.next = None
+        self.prev = None
+
+
+
+
+
+class DoubleLinkedList:
+    def __init__(self, value):    
+        new_node = Node(value)  
+        self.head = new_node
+        self.tail = new_node        
+        self.length = 1
+
+
+        
+        
+        
+    def print_list(self):
+        temp = self.head
+        while temp is not None:
+            print(temp.value)
+            temp = temp.next
+            
+
+
+    def append(self, value):
+        new_node = Node(value)
+        if self.head is None:
+            self.head = new_node
+            self.tail = new_node
+        else:
+            self.tail.next = new_node
+            new_node.prev = self.tail
+            self.tail = new_node
+        self.length += 1
+        return True
+
+
+
+
+    def pop(self):
+        if self.length == 0:
+            return None
+        temp = self.tail
+        if self.length == 1:
+            self.head = None
+            self.tail = None
+        else:
+            self.tail = self.tail.prev
+            self.tail.next = None
+            temp.prev = None
+        self.length -= 1
+        return temp
+        
+        
+
+
+
+    def prepend(self, value):
+        new_node = Node(value)
+        if self.length == 0:
+            self.head = new_node
+            self.tail = new_node
+        else:
+            new_node.next = self.head
+            self.head.prev = new_node
+            self.head = new_node
+            self.length += 1
+        return True
+
+
+
+
+
+    def pop_first(self):
+        if self.length == 0:
+            return None
+        temp = self.head
+        if self.length == 1:
+            self.head = None
+            self.tail = None
+        else:
+            self.head = self.head.next
+            self.head.prev = None
+            temp.next = None
+        self.length -= 1
+        return temp
+
+
+
+
+
+
+    def get(self, index):
+        if index < 0 or index >= self.length:
+            return None
+        if index < self.length/2:
+            temp = self.head
+            for _ in range(index):
+                temp = temp.next
+        else:
+            temp = self.tail
+            for _ in range(self.length - 1, index, -1):
+                temp = temp.prev
+        return temp
+
+
+
+
+
+
+
+
+    def set_value(self, index, value):
+        temp = self.get(index)
+        if temp:
+            temp.value = value
+            return True
+        return False
+
+
+
+
+
+    def insert(self, index, value):
+        if index < 0 or index > self.length:
+            return False
+        if index == 0:
+            return self.prepend(value)
+        if index == self.length:
+            return self.append(value)
+
+        new_node = Node(value)
+        before = self.get(index - 1)
+        after = before.next
+
+        new_node.prev = before
+        new_node.next = after
+        before.next = new_node
+        after.prev = new_node
+
+        self.length += 1
+        return True
+
+
+
+
+    def remove(self, index):
+        if index < 0 or index >= self.length:
+            return None
+        if index == 0:
+            return self.pop_first()
+        if index == self.length - 1:
+            return self.pop()
+
+        temp = self.get(index)
+
+        temp.next.prev = temp.prev
+        temp.prev.next = temp.next
+        temp.next = None
+        temp.prev = None
+
+        self.length -= 1
+        return temp
+
+
+
+
+
+my_doubly_linked_list = DoubleLinkedList(1)
+my_doubly_linked_list.append(2)
+my_doubly_linked_list.append(3)
+my_doubly_linked_list.print_list()
+print()
+'''
+
+
+
+
+
+
+
+
+################################################## Stack
+
+'''
+class Node:
+    def __init__(self, value):
+        self.value = value
+        self.next = None
+
+
+class Stack:
+    def __init__(self, value):
+        new_node = Node(value)
+        self.top = new_node
+        self.height = 1
+
+    def print_stack(self):
+        temp = self.top
+        while temp is not None:
+            print(temp.value)
+            temp = temp.next
+
+
+
+    def push(self, value):
+        new_node = Node(value)
+        if self.height == 0:
+            self.top = new_node
+        else:
+            new_node.next = self.top
+            self.top = new_node
+        self.height += 1
+
+
+
+
+    def pop(self):
+        if self.height == 0:
+            return None
+        temp = self.top
+        self.top = self.top.next
+        temp.next = None
+        self.height -= 1
+        return temp
+
+
+
+
+
+
+my_stack = Stack(1)
+my_stack.print_stack()
+print(type(my_stack))
+print()
+
+my_stack.push(2)
+my_stack.push(3)
+my_stack.print_stack()
+print()
+
+my_stack.pop()
+my_stack.print_stack()
+'''
+
+
+
+
+
+
+################################## Queue
+
+'''
+class Node:
+    def __init__(self, value):
+        self.value = value
+        self.next = None
+
+
+class Queue:
+    def __init__(self, value):
+        new_node = Node(value)
+        self.first = new_node
+        self.last = new_node
+        self.length = 1
+
+    def print_queue(self):
+        temp = self.first
+        while temp is not None:
+            print(temp.value)
+            temp = temp.next
+
+
+
+    def enqueue(self, value):
+        new_node = Node(value)
+        if self.first is None:
+            self.first = new_node
+            self.last = new_node
+        else:
+            self.last.next = new_node
+            self.last = new_node
+        self.length += 1
+
+
+
+
+
+    def dequeue(self):
+        if self.length == 0:
+            return None
+        temp = self.first
+        if self.length == 1:
+            self.first = None
+            self.last = None
+        else:
+            self.first = self.first.next
+            temp.next = None
+        self.length -= 1
+        return temp
+
+
+
+
+my_queue = Queue(1)
+my_queue.print_queue()
+print(type(my_queue))
+print()
+
+
+my_queue.enqueue(2)
+my_queue.enqueue(3)
+my_queue.print_queue()
+print()
+
+my_queue.dequeue()
+my_queue.print_queue()
+print()
+'''
+
+
+
+
+
+
+
+
+
+
+
+
+
+################# Binary Search Trees
+
+'''
+class Node:
+    def __init__(self, value):
+        self.value = value
+        self.left = None
+        self.right = None
+
+class BinarySearchTree:
+    def __init__(self):
+        self.root = None
+
+
+
+
+
+    def insert(self, value):
+        new_node = Node(value)
+        if self.root is None:
+            self.root = new_node
+            return True
+        temp = self.root
+
+        while True:
+            if new_node.value == temp.value:
+                return False
+            if new_node.value < temp.value:
+                if temp.left is None:
+                    temp.left = new_node
+                    return True
+                temp = temp.left
+            else:
+                if temp.right is None:
+                    temp.right = new_node
+                    return True
+                temp = temp.right
+
+
+
+    def contains(self, value):
+        temp = self.root
+        while temp is not None:
+            if value < temp.value:
+                temp = temp.left
+            elif value > temp.value:
+                temp = temp.right
+            else:
+                return True
+        return False
+
+
+
+
+
+
+
+
+my_tree = BinarySearchTree()
+print(type(my_tree))
+print(my_tree.root)
+print()
+
+my_tree.insert(2)
+my_tree.insert(1)
+my_tree.insert(3)
+print(my_tree.root.value)
+print(my_tree.root.left.value)
+print(my_tree.root.right.value)
+
+
+print(my_tree.insert(2))
+print()
+
+print(my_tree.contains(1))
+print(my_tree.contains(7))
+
+'''
+
+
+
+
+
+
+
+
+
+
+
+####################### Hash table
+
+'''
+class HashTable:
+    def __init__(self, size = 7):
+        self.data_map = [None] * size
+    def __hash(self, key):
+        my_hash = 0
+        for letter in key:
+            my_hash = (my_hash + ord(letter) * 23) % len(self.data_map)
+        return my_hash
+    def print_table(self):
+        for i, value in enumerate(self.data_map):
+            print(i, ':', value)
+
+
+
+    def set_item(self, key, value):
+        index = self.__hash(key)
+        if self.data_map[index] == None:
+            self.data_map[index] = []
+        self.data_map[index].append([key, value])
+
+
+
+
+    def get_item(self, key):
+        index = self.__hash(key)
+        if self.data_map[index] is not None:
+            for i in range(len(self.data_map[index])):
+                if self.data_map[index][i][0] == key:
+                    return self.data_map[index][i][1]
+        return None
+
+
+
+    def keys(self):
+        all_keys = []
+        for i in range(len(self.data_map)):
+            if self.data_map[i] is not None:
+                for j in range(len(self.data_map[i])):
+                    all_keys.append(self.data_map[i][j][0])
+        return all_keys
+
+
+
+
+
+
+
+my_hash_table = HashTable()
+my_hash_table.set_item('bolts', 1400)
+my_hash_table.set_item('washers', 50)
+my_hash_table.set_item('lumber', 70)
+
+my_hash_table.print_table()
+print()
+
+print(my_hash_table.get_item('bolts'))
+print(my_hash_table.get_item('washers'))
+print(my_hash_table.get_item('llllllll'))
+print()
+
+
+print(my_hash_table.keys())
+'''
+
+
+
+
+
+
+
+
+
+
+
+
+##################### Hash table interview
+# do not use hash table: O(n^2)
+'''
+def item_in_common(list1, list2):
+    for i in list1:
+        for j in list2:
+            if i == j:
+                return True
+    return False
+
+
+
+list1 = [1,3,5]
+list2 = [2,4,5]
+
+print(item_in_common(list1, list2))
+'''
+
+
+
+
+
+'''
+# use hash tabel: O(n)
+def item_in_common(list1, list2):
+    my_dict = {}
+    for i in list1:
+        my_dict[i] = True
+
+    for j in list2:
+        if j in my_dict:
+            return True
+
+    return False
+
+
+
+list1 = [1,3,5]
+list2 = [2,4,5]
+print(item_in_common(list1, list2))
+'''
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+'''
+class Graph:
+    def __init__(self):
+        self.adj_list = {}
+
+    def print_graph(self):
+        for vertex in self.adj_list:
+            print(vertex, ':', self.adj_list[vertex])
+
+    def add_vertex(self, vertex):
+        if vertex not in self.adj_list.keys():
+            self.adj_list[vertex] = []
+            return True
+        return False
+
+
+    def add_edge(self, v1, v2):
+        if v1 in self.adj_list.keys() and v2 in self.adj_list.keys():
+            self.adj_list[v1].append(v2)
+            self.adj_list[v2].append(v1)
+            return True
+        return False
+
+
+
+    def remove_vertex(self, vertex):
+        if vertex in self.adj_list.keys():
+            for other_vertex in self.adj_list[vertex]:
+                self.adj_list[other_vertex].remove(vertex)
+            del self.adj_list[vertex]
+            return True
+        return False
+
+
+
+
+
+
+
+my_graph = Graph()
+my_graph.add_vertex('A')
+my_graph.print_graph()
+print()
+
+my_graph.add_vertex(1)
+my_graph.add_vertex(2)
+
+my_graph.add_edge(1,2)
+my_graph.print_graph()
+print()
+
+
+my_graph.add_vertex('A')
+my_graph.add_vertex('B')
+my_graph.add_vertex('C')
+my_graph.add_vertex('D')
+
+my_graph.add_edge('A', 'B')
+my_graph.add_edge('B', 'C')
+my_graph.add_edge('C', 'A')
+my_graph.remove_edge('A','B')
+
+my_graph.add_edge('A','B')
+my_graph.add_edge('A','C')
+my_graph.add_edge('A','D')
+my_graph.add_edge('B','D')
+my_graph.add_edge('C','D')
+
+my_graph.remove_vertex('D')
+
+my_graph.print_graph()
+'''
+
+                    
+
+
+
+
+
+
+
+
+
+'''
+class Recursion:
+    def open_gift_box():
+        if ball:
+            return ball
+        open_gift_box()
+'''
+
+
+
+
+
+
+
+
+####################### Call stack
+'''
+def funcThree():
+    print('Three')
+
+
+def funcTwo():
+    funcThree()
+    print('Two')
+
+
+def funcOne():
+    funcTwo()
+    print('One')
+
+
+funcOne()
+'''
+
+
+
+
+
+
+
+
+
+
+
+
+################ print factorial number in human way
+
+# n = 4
+# print(str(n) + "! = ", end = '')
+# def factorial(n):
+    # '''
+    # print factorial number in human way
+    # '''
+    # if n < 0:
+        # return 'factorial() not defined for negative values'
+    # if n == 0:
+        # return 1
+    # if n == 1:
+        # print('', n, '= ', end = '')
+        # return 1
+    # else:
+        # print('', n, '*', end = '')
+        # return n * factorial(n - 1)
+
+
+# print(factorial(n))
+
+
+
+
+
+
+
+
+
+############################### Bubble sort
+'''
+def bubble_sort(my_list):
+    for i in range(len(my_list) - 1, 0, -1):
+        for j in range(i):
+            if my_list[j] > my_list[j+1]:
+                temp = my_list[j]
+                my_list[j] = my_list[j+1]
+                my_list[j+1] = temp
+    return my_list
+
+
+
+
+
+
+def selection_sort(my_list):
+    for i in range(len(my_list) - 1):
+        min_index = i
+        for j in range(i+1, len(my_list)):
+            if my_list[j] < my_list[min_index]:
+                min_index = j
+        if i != min_index:
+            temp = my_list[i]
+            my_list[i] = my_list[min_index]
+            my_list[min_index] = temp
+    return my_list
+
+
+
+
+
+def selection_sort(my_list):
+    for i in range(len(my_list) - 1):
+        min_index = i
+        for j in range(i+1, len(my_list)):
+            if my_list[j] < my_list[min_index]:
+                min_index = j
+        if i != min_index:
+            temp = my_list[i]
+            my_list[i] = my_list[min_index]
+            my_list[min_index] = temp
+    return my_list
+
+
+
+
+def merge(list1, list2):
+    combined = []
+    i = 0
+    j = 0
+    while i < len(list1) and j < len(list2):
+        if list1[i] < list2[j]:
+            combined.append(list1[i])
+            i += 1
+        else:
+            combined.append(list2[j])
+            j += 1
+
+    while i < len(list1):
+        combined.append(list1[i])
+        i += 1
+
+    while j < len(list2):
+        combined.append(list2[j])
+        j += 1
+
+    return combined
+
+       
+       
+       
+
+
+def merge_sort(my_list):
+    if len(my_list) == 1:
+        return my_list
+    mid = int(len(my_list) / 2)
+    left = my_list[:mid]
+    right = my_list[mid:]
+    return merge(merge_sort(left), merge_sort(right))
+
+
+
+
+
+       
+print(bubble_sort([4,2,6,5,1,3]))
+print()
+print(selection_sort([4,2,6,5,1,3]))
+print()
+print(insertion_sort([4,2,6,5,1,3]))
+
+print()
+print(merge([1,2,7,8],[3,4,5,6]))
+
+
+print()
+print(merge_sort([3,1,4,2]))
+
+
+'''
+
+
+
+
+
+'''
+def swap(my_list, index1, index2):
+    temp = my_list[index1]
+    my_list[index1] = my_list[index2]
+    my_list[index2] = temp
+
+
+
+def pivot(my_list, pivot_index, end_index):
+# end_index is the last index number of the my_list
+
+    swap_index = pivot_index
+
+    for i in range(pivot_index+1, end_index+1):
+    # range(a,b), cannot take b out
+    
+        if my_list[i] < my_list[pivot_index]:
+            swap_index += 1
+            swap(my_list, swap_index, i)
+            # swap(my_list, 0, 0) equal to not swap
+            
+    swap(my_list, pivot_index, swap_index)
+    return swap_index
+    # take out the index, not the value
+
+
+
+
+
+
+
+def quick_sort_helper(my_list, left, right):
+    if left < right:
+    # look up above the method pivot(), "left" equal to pivot_index, "right" equal to end_index
+    
+        pivot_index = pivot(my_list, left, right)
+        # pivot_index is the swap_index
+        
+        quick_sort_helper(my_list, left, pivot_index-1)
+        quick_sort_helper(my_list, pivot_index+1, right)
+        # the pivot_index is lay on the middle of the my_list
+        
+    return my_list
+    # if the my_list has only one number, return it
+
+
+
+
+def quick_sort(my_list):
+    return quick_sort_helper(my_list, 0, len(my_list) - 1)
+
+
+
+
+
+
+
+
+# swap a same index:
+my_list3 = [1,2]
+swap(my_list3,0,1)
+print(my_list3)
+swap(my_list3,0,1)
+print(my_list3)
+swap(my_list3,0,0)
+print(my_list3)
+
+
+
+
+my_list = [4,6,1,7,3,2,5]
+my_list2 = [4,1,6,7,3,2,5]
+print(pivot(my_list, 0, 6))
+print(pivot(my_list2, 0, 6))
+print(my_list)
+print(my_list2)
+
+print()
+print(quick_sort([4,6,1,7,3,2,5]))
+'''
+
+
+
+
+
+
+
+
+
+
 
 
 
