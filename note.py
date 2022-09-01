@@ -2004,6 +2004,11 @@ http://www.pythonchallenge.com/pc/def/ocr.html
             # self.tail = new_node
         # self.length += 1
 
+
+
+
+
+
     # def pop_first(self):
         # if self.length == 0:
             # return None
@@ -2513,73 +2518,76 @@ my_linked_list.print_list()
 
 
 
+
 ################################ reverse()
-# class Node:
-    # def __init__(self, value):
-        # self.value = value
-        # self.next = None
+
+
+class Node:
+    def __init__(self, value):
+        self.value = value
+        self.next = None
 
 
 
 
-# class LinkedList:
-    # def __init__(self, value):
-        # new_node = Node(value)
-        # self.head = new_node
-        # self.tail = new_node
-        # self.length = 1
+class LinkedList:
+    def __init__(self, value):
+        new_node = Node(value)
+        self.head = new_node
+        self.tail = new_node
+        self.length = 1
 
 
 
 
-    # def print_list(self):     
-        # temp = self.head
-        # while temp is not None:
-            # print(temp.value)
-            # temp = temp.next
-        # else:
-            # print(temp)
+    def print_list(self):     
+        temp = self.head
+        while temp is not None:
+            print(temp.value)
+            temp = temp.next
+        else:
+            print(temp)
             
 
 
 
-    # def append(self, value):
-        # new_node = Node(value)
-        # if self.head is None:
-        # # if self.length == 0:
-            # self.head = new_node
-            # self.tail = new_node
-        # else: 
-            # self.tail.next = new_node
-            # self.tail = new_node
-        # self.length += 1
+    def append(self, value):
+        new_node = Node(value)
+        if self.head is None:
+        # if self.length == 0:
+            self.head = new_node
+            self.tail = new_node
+        else: 
+            self.tail.next = new_node
+            self.tail = new_node
+        self.length += 1
         
 
 
-    # def reverse(self):
-        # temp = self.head
-        # self.head = self.tail
-        # self.tail = temp
-        # after = temp.next
-        # before = None
-        # for _ in range(self.length):
-            # after = temp.next
-            # temp.next = before
-            # before = temp
-            # temp = after
+    def reverse(self):
+        temp = self.head
+        self.head = self.tail
+        self.tail = temp
+        after = temp.next
+        before = None
+        for _ in range(self.length):
+            after = temp.next
+            temp.next = before
+            before = temp
+            temp = after
 
 
 
-# my_linked_list = LinkedList(1)
-# my_linked_list.append(2)
-# my_linked_list.append(3)
-# my_linked_list.append(4)
-# my_linked_list.print_list()
-# print()
+my_linked_list = LinkedList(1)
+my_linked_list.append(2)
+my_linked_list.append(3)
+my_linked_list.append(4)
+my_linked_list.print_list()
+print()
 
-# my_linked_list.reverse()
-# my_linked_list.print_list()
-
+my_linked_list.reverse()
+my_linked_list.print_list()
+'''
 
 
 
@@ -2793,7 +2801,7 @@ my_linked_list.print_list()
 
 
 '''
-'''
+
 class Node:
     def __init__(self, value):
         self.value = value
@@ -2984,6 +2992,7 @@ print()
 ################################################## Stack
 
 '''
+
 class Node:
     def __init__(self, value):
         self.value = value
@@ -3052,6 +3061,7 @@ my_stack.print_stack()
 ################################## Queue
 
 '''
+
 class Node:
     def __init__(self, value):
         self.value = value
@@ -3134,6 +3144,7 @@ print()
 ################# Binary Search Trees
 
 '''
+
 class Node:
     def __init__(self, value):
         self.value = value
@@ -3223,6 +3234,7 @@ print(my_tree.contains(7))
 ####################### Hash table
 
 '''
+
 class HashTable:
     def __init__(self, size = 7):
         self.data_map = [None] * size
@@ -3354,7 +3366,10 @@ print(item_in_common(list1, list2))
 
 
 
+
+###################################### Graph
 '''
+
 class Graph:
     def __init__(self):
         self.adj_list = {}
@@ -3437,6 +3452,12 @@ my_graph.print_graph()
 
 
 
+
+
+
+
+
+
 '''
 class Recursion:
     def open_gift_box():
@@ -3444,6 +3465,7 @@ class Recursion:
             return ball
         open_gift_box()
 '''
+
 
 
 
@@ -3512,8 +3534,11 @@ funcOne()
 
 
 
-############################### Bubble sort
+
+
+############################### sort
 '''
+
 def bubble_sort(my_list):
     for i in range(len(my_list) - 1, 0, -1):
         for j in range(i):
@@ -3542,19 +3567,19 @@ def selection_sort(my_list):
 
 
 
-
-
-def selection_sort(my_list):
-    for i in range(len(my_list) - 1):
-        min_index = i
-        for j in range(i+1, len(my_list)):
-            if my_list[j] < my_list[min_index]:
-                min_index = j
-        if i != min_index:
-            temp = my_list[i]
-            my_list[i] = my_list[min_index]
-            my_list[min_index] = temp
+def insertion_sort(my_list):
+    for i in range(1, len(my_list)):
+        temp = my_list[i]
+        j = i - 1
+        while temp < my_list[j] and j > -1:
+            my_list[j+1] = my_list[j]
+            my_list[j] = temp
+            j -= 1
     return my_list
+
+
+
+
 
 
 
@@ -3580,9 +3605,7 @@ def merge(list1, list2):
         j += 1
 
     return combined
-
-       
-       
+   
        
 
 
@@ -3608,7 +3631,6 @@ print(insertion_sort([4,2,6,5,1,3]))
 print()
 print(merge([1,2,7,8],[3,4,5,6]))
 
-
 print()
 print(merge_sort([3,1,4,2]))
 
@@ -3619,7 +3641,18 @@ print(merge_sort([3,1,4,2]))
 
 
 
+
+
+
+
+
+
+
+
+##################### quick_sort
+
 '''
+
 def swap(my_list, index1, index2):
     temp = my_list[index1]
     my_list[index1] = my_list[index2]
@@ -3704,7 +3737,158 @@ print(quick_sort([4,6,1,7,3,2,5]))
 
 
 
-## tree
+
+
+
+
+
+############################### Binary search tree + Breadth first search
+
+
+'''
+
+class Node:
+    def __init__(self, value):
+        self.value = value
+        self.left = None
+        self.right = None
+
+class BinarySearchTree:
+    def __init__(self):
+        self.root = None
+
+
+
+
+    def insert(self, value):
+        new_node = Node(value)
+        if self.root is None:
+            self.root = new_node
+            return True
+        temp = self.root
+
+        while True:
+            if new_node.value == temp.value:
+                return False
+            if new_node.value < temp.value:
+                if temp.left is None:
+                    temp.left = new_node
+                    return True
+                temp = temp.left
+            else:
+                if temp.right is None:
+                    temp.right = new_node
+                    return True
+                temp = temp.right
+
+
+
+
+
+
+    def contains(self, value):
+        temp = self.root
+        while temp is not None:
+            if value < temp.value:
+                temp = temp.left
+            elif value > temp.value:
+                temp = temp.right
+            else:
+                return True
+        return False
+
+
+
+
+
+
+    def BFS(self):
+        current_node = self.root
+        queue = []
+        results = []
+        queue.append(current_node)
+
+        while len(queue) > 0:
+            current_node = queue.pop(0)
+            results.append(current_node.value)
+            if current_node.left is not None:
+                queue.append(current_node.left)
+            if current_node.right is not None:
+                queue.append(current_node.right)
+        return results
+
+
+
+    def dfs_pre_order(self):
+        results = []
+
+        def traverse(current_node):
+            results.append(current_node.value)
+            if current_node.left is not None:
+                traverse(current_node.left)
+            if current_node.right is not None:
+                traverse(current_node.right)
+
+        traverse(self.root)
+        return results
+
+
+
+
+
+
+
+    def dfs_post_order(self):
+        results = []
+
+
+        def traverse(current_node):
+            if current_node.left is not None:
+                traverse(current_node.left)
+            if current_node.right is not None:
+                traverse(current_node.right)
+            results.append(current_node.value)
+
+        traverse(self.root)
+        return results
+
+
+
+
+    def dfs_in_order(self):
+        results = []
+
+
+        def traverse(current_node):
+            if current_node.left is not None:
+                traverse(current_node.left)
+            results.append(current_node.value)
+            if current_node.right is not None:
+                traverse(current_node.right)
+
+        traverse(self.root)
+        return results
+
+
+
+
+
+
+
+my_tree = BinarySearchTree()
+my_tree.insert(47)
+my_tree.insert(21)
+my_tree.insert(76)
+my_tree.insert(18)
+my_tree.insert(27)
+my_tree.insert(52)
+my_tree.insert(82)
+
+print(my_tree.BFS())
+print(my_tree.dfs_pre_order())
+print(my_tree.dfs_post_order())
+print(my_tree.dfs_in_order())
+'''
 
 
 
